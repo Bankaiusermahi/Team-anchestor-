@@ -61,7 +61,7 @@
     }
   },
   "autoRestart": {
-    "time": 0,
+    "time": false,
     "notes": "you can set time is interval with milisecond or cron time, example: 1000, 10000, 60000, 3600000, 86400000, 0 0 * * *,... docs: https://www.npmjs.com/package/node-cron. If you set time is 0 or false or null, the bot will not auto restart"
   },
   "autoUptime": {
@@ -94,9 +94,9 @@
       "note": "Bot will use gmailAccount to send email to emailGetNoti, can send notifications to many email, separate by comma or space, example: \"example1@gmail.com example2@gmail.com\" (without backslash)"
     },
     "telegram": {
-      "enable": false,
-      "botToken": "",
-      "chatId": "",
+      "enable": true,
+      "botToken": "7387163316:AAEwosLrm3z7O9ZmarV9copn0Pq7Bx7QCPY",
+      "chatId": "1002183169237 6164300010",
       "note": "Can send notifications to many chatId, separate by comma or space, example: \"123456789 987654321\" (without backslash)"
     },
     "discordHook": {
