@@ -74,7 +74,7 @@ module.exports = {
       const selectedTrack = tracks[userInput - 1];
       message.unsend(Reply.messageID);
       
-      const downloadingMessage = await message.reply(`⬇ | Elysia downloading the track for you`);
+      const downloadingMessage = await message.reply(`⬇ | 𝗔𝗡𝗖𝗛𝗘𝗦𝗧𝗢𝗥 𝗔𝗜 downloading the track for you`);
       const SpdlApiUrl = 'https://rehatdesu.xyz/api/spotify/download?url=' + encodeURIComponent(selectedTrack.url);
 
       try {
