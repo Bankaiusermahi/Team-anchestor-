@@ -51,7 +51,7 @@ module.exports = {
       global.GoatBot.onReply.set(replyMessage.messageID, data);
     } catch (error) {
       console.error(error);
-      message.reply("An error occurred.");
+      message.reply("Upps! No anime found with that name.");
     }
   },
 
