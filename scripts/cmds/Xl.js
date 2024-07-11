@@ -41,7 +41,7 @@ module.exports = {
       const finalRatio = ratio && aspectRatioMap.hasOwnProperty(ratio) ? ratio : "1:1";
       const finalStyle = style && !isNaN(style) && style >= 0 && style <= 10 ? parseInt(style) : 0;
 
-      const apiUrl = `https://xl31-3wfo.onrender.com/kshitiz?prompt=${encodeURIComponent(prompt)}&ratio=${encodeURIComponent(finalRatio)}&style=${encodeURIComponent(finalStyle)}`;
+      const apiUrl = `https://xl31-xt9r.onrender.com/kshitiz?prompt=${encodeURIComponent(prompt)}&ratio=${encodeURIComponent(finalRatio)}&style=${encodeURIComponent(finalStyle)}`;
 
       const response = await axios.get(apiUrl, { responseType: "arraybuffer" });
 
