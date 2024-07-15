@@ -6,7 +6,7 @@ module.exports = {
  name: "coupledp",
  aliases: ["coupledp"],
  version: "1.0",
- author: "Loid Butter",
+ author: "Mahi--",
  countDown: 5,
  role: 0,
  shortDescription: {
@@ -24,7 +24,7 @@ module.exports = {
  onStart: async function ({ api, event, args }) {
  try {
  const { data } = await axios.get(
- "https://tanjiro-api.onrender.com/cdp?api_key=tanjiro"
+ "https://global-sprak.onrender.com/api/cdp"
  );
  const maleImg = await axios.get(data.male, { responseType: "arraybuffer" });
  fs.writeFileSync(__dirname + "/tmp/img1.png", Buffer.from(maleImg.data, "utf-8"));
