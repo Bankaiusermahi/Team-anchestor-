@@ -1,42 +1,41 @@
 const axios = require("axios");
 const path = require("path");
-
-/*Do not change
-        the credit 🐢👑*/
+const fs = require("fs-extra");
 
 module.exports = {
   config: {
     name: "pinterest",
     aliases: ["pin"],
     version: "1.0",
-    author: "rehat--",
+    author: "Mahi--",
     role: 0,
     countDown: 60,
     longDescription: {
-  en: "This command allows you to search for images on pinterest based on a given query and fetch a specified number of images."
-},
+      en: "This is a fast Pinterest command locked in 6 "
+    },
     category: "Search",
     guide: {
-      en: "{pn} <search query> <number of images>\nExample: {pn} tomozaki -5"
+      en: "{prefix} pin/Pinterest boruto -5"
     }
   },
 
   onStart: async function ({ api, event, args }) {
     try {
-      const fs = require("fs-extra");
       const keySearch = args.join(" ");
       if (!keySearch.includes("-")) {
         return api.sendMessage(
-          "Please enter the search query and number of images (1-4)",
+          "Please enter the search query and number of images (1-6)",
           event.threadID,
           event.messageID
         );
       }
-      const keySearchs = keySearch.substr(0, keySearch.indexOf('-'))
-      let numberSearch = keySearch.split("-").pop() || 6
-    if (numberSearch> 4 ){
-      numberSearch = 4
-    }
+
+      const keySearchs = keySearch.split("-")[0].trim();
+      let numberSearch = parseInt(keySearch.split("-").pop().trim()) || 1;
+
+      if (numberSearch > 8) {
+        numberSearch = 8;
+      }
 
       const apiUrl = `https://turtle-apis.onrender.com/api/pinterest?search=${encodeURIComponent(keySearchs)}&keysearch=${numberSearch}`;
 
